@@ -1,0 +1,469 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
+body{
+    background-image: url(../images/background.jpg);
+    font-family: 'Nova Square', cursive;
+}
+
+:root{
+    --primary: rgb(17, 17, 121);
+}
+body, ul {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+/* Style the navigation bar */
+nav {
+    background-color: transparent;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+nav li{
+    position: relative;
+    list-style: none;
+    margin: 0 20px;
+}
+
+nav h1{
+    font-size: 50px;
+}
+
+nav li::before{
+    position: absolute;
+    bottom: -10px;   
+    left: 50%;
+    transform: translateX(-50%);
+    content: '';
+    height: 3px;
+    width: 50%;
+    background: var(--primary);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+   
+nav li:hover::before{
+    opacity: 1;
+    visibility: visible;
+}
+
+nav li a{
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 10px;
+}
+
+
+/* mobile menu  the icon*/
+.nav-mobile{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    z-index: 900;
+    gap: 20px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.nav-mobile.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-mobile li{
+    position: relative;
+    list-style: none;
+}
+
+.nav-mobile li a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 10px;
+}
+
+.nav-mobile li::before{
+    position: absolute;
+    bottom: -10px;   
+    left: 50%;
+    transform: translateX(-50%);
+    content: '';
+    height: 2px;
+    width: 50%;
+    background: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.nav-mobile li:hover::before{
+    opacity: 1;
+    visibility: visible;
+    background: orangered;
+}
+   
+
+/* Style the logo on the left */
+.logo {
+    font-weight: bold;
+    font-size: 50px;
+}
+
+/* Style the planet list on the right */
+.planet-list {
+    list-style-type: none;
+    display: flex;
+}
+
+.planet-list li {
+    margin-right: 20px;
+}
+
+/* Style the underline */
+.underline {
+    border-bottom: 2px solid #f9f9f9;
+    margin-top: 10px;
+}
+
+/* Style the planet-info container */
+.planet-info {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    max-width: 800px;
+    background-color: transparent;
+    margin: 200px 420px;
+}
+
+
+/* Style the planet image */
+.planet-image img {
+    height: auto;
+}
+
+/* Style the planet description */
+.planet-description {
+    flex-grow: 1;
+    padding: 90px;
+    color: #f9f9f9;
+}
+
+.planet-description h1 {
+    font-size: 58px;
+    margin-bottom: 10px;
+}
+
+.planet-description p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+
+
+/* Style the card container */
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Style the planet card container */
+.column {
+    float: left;
+    width: 25%;
+  }
+  
+  /* Remove extra left and right margins, due to padding in columns */
+  .row {
+    margin: 20px 250px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the counter cards */
+  .cardy {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: transparent;
+    margin-bottom: 10px;
+    margin-left: 5%;
+    text-align: center;
+    color: whitesmoke;
+  }
+  
+
+/* 
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 22px auto;
+}
+
+
+.planet-card {
+    flex-basis: calc(25% - 30px); 
+    border: 2px solid #333; 
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    height: 100px; 
+    
+    margin-right: 5px;
+}
+.planet-card:last-child {
+    margin-right: 0;
+}
+
+
+
+.planet-card h2 {
+    display: flex;
+    flex-direction: column;
+    color: #f9f9f9;
+    font-size: 18px; 
+    margin-bottom: 10px;
+}
+
+.planet-card p {
+    display: flex;
+    flex-direction: column;
+    color: #f9f9f9;
+    font-size: 18px; 
+    margin: 5px 0;
+} */
+
+
+/* Source area */
+.source {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px; 
+}
+
+.source span {
+    font-weight: bold;
+}
+
+.underline-link {
+    text-decoration: underline;
+}
+
+.source span::after {
+    content: "\2197"; /* unicode for right arrow*/
+    margin-left: 5px;
+}
+
+.source span b a{
+    color: #ffffff;
+    
+}
+
+/* source  small card style 3*/
+.cards {
+    margin-top: 20px;
+}
+
+.card {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: transparent;
+    margin-bottom: 10px; 
+}
+
+.card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #f7f7f7;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+.card:hover{
+    background-color: rgb(85, 3, 85);
+}
+
+
+
+/* mobile menu */
+
+.menu{
+    display: none;
+    transition: 0.3s;
+}
+
+.menu ion-icon {
+    color: #ffffff;
+    font-size: 1.8em;
+}
+
+.menu.active{
+    transform: rotateZ(45deg);
+}
+
+/* mobile menu  the icon*/
+.nav-mobile{
+    position: absolute;
+    top: 55px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    z-index: 900;
+    gap: 20px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.nav-mobile.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-mobile li{
+    position: relative;
+    list-style: none;
+}
+
+.nav-mobile li a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 10px;
+}
+
+.nav-mobile li::before{
+    position: absolute;
+    bottom: -10px;   
+    left: 50%;
+    transform: translateX(-50%);
+    content: '';
+    height: 2px;
+    width: 50%;
+    background: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.nav-mobile li:hover::before{
+    opacity: 1;
+    visibility: visible;
+    background: orangered;
+}
+   
+
+/* Media Query for screens with a maximum width of 768px (typical tablet size) */
+@media screen and  (max-width: 600px) {
+    body, ul {
+        padding: 10px; 
+        
+    }
+
+    nav {
+        font-size: 16px;
+        padding: 10px; 
+        height: 10px;
+    }
+
+    .logo{
+        font-size: 25px;
+    }
+    .master-nav ul{
+        visibility: hidden;
+    }
+    .menu{
+        display: block;
+    }
+
+    .planet-list {
+        flex-direction: column; 
+    }
+
+    .planet-list li {
+        margin-right: 0; 
+        margin-bottom: 10px; 
+    }
+
+    .planet-info {
+        flex-direction: column;
+        padding: 10px;
+        margin: 20px auto; 
+    }
+
+    .planet-description {
+        padding: 20px; 
+    }
+
+    .planet-description h1 {
+        font-size: 36px;
+    }
+    .row {
+        margin: 20px 280px;
+    }
+
+    .column {
+        float: inline-end;
+        width: 179px;
+    }
+    cardy {
+        padding: 18px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: transparent;
+        margin-bottom: 10px;
+        text-align: center;
+        color: whitesmoke;
+        width: 127%;
+        margin-left: -34px;
+    }
+}
